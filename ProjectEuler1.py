@@ -7,4 +7,4 @@ def Multiple_of_3or5(limit):
             sum = i + sum
     print(sum)
 
-Multiple_of_3or5(1000)
+Multiple_of_3or5(10000)
