@@ -6,22 +6,31 @@
 
 def create_alphabet
   alphabet = []
-  ('a'...'z').each do |letter|
+  ('A'..'Z').each do |letter|
     alphabet.append(letter)
   end
-  print alphabet
+  alphabet
 end
 
 def sum_alphabet_values(names)
-  create_alphabet
+  alphabet = create_alphabet
+  index = 1
+  alphabet_value = []
   # Take names list and make into a sorted array
   names_arr = File.read(names).split(",").map(&:strip).sort
-
-  #Need to create hash:
-
-
+  names_arr.each do |name|
+    sum_for_letter = 0
+    name.chars.each do |letter|
+      if alphabet.include?(letter)
+        sum_for_letter += alphabet.index(letter) + 1
+      end
+    end
+    alphabet_value.append(sum_for_letter*index)
+    index += 1
+  end
+  total = alphabet_value.sum
+  puts total
 end
-
 
 
 sum_alphabet_values('names.txt')
