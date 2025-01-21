@@ -1,6 +1,4 @@
 #what is the 10001 prime number?
-from sympy import *
-
 def find_num_of_prime(x):
     list_of_primes = []
     i = 1
